@@ -184,3 +184,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1729eea8d37d4aa4ea438f0ea982d56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curState: 0
+  comboActive: 0
+  comboIndex: 0
+  comboTimer: 0
+  comboTime: 0
+  comboTimeMin: 1
+  comboTimeMax: 3
+  idleBufferTimer: 0
+  idleBufferTime: 0
+  idleBufferTimeMin: 1
+  idleBufferTimeMax: 5
+  idleTimer: 0
+  idleTime: 0
+  idleTimeMin: 3
+  idleTimeMax: 8
+  spriteRenderer: {fileID: 0}
+  playerReference: {fileID: 0}
+  distance: 0
+  speed: 1.5
