@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: -3841001047202128992}
   - component: {fileID: 8685324734565072682}
   - component: {fileID: -8275098682243265872}
-  - component: {fileID: -1139524236253872678}
-  - component: {fileID: 7553200878207485588}
+  - component: {fileID: 4998273334827006215}
+  - component: {fileID: -1868362454033205819}
   m_Layer: 0
   m_Name: Mop Player Controller
   m_TagString: Untagged
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-8275098682243265872
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.16936994, y: 0.03629446}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -171,9 +171,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.984659, y: 12.251117}
   m_EdgeRadius: 0
---- !u!114 &-1139524236253872678
+--- !u!114 &4998273334827006215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,55 +186,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAction:
-<<<<<<< Updated upstream
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 3546dbc9-8e80-494c-8434-e4179e77b8d9
-=======
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ddb37c75-cd3b-4d4b-961c-255d0277e0e5
->>>>>>> Stashed changes
+    m_Id: 9f2649a7-f7d8-4a58-92e6-63c0ed7ab61f
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   punchAction:
-<<<<<<< Updated upstream
     m_Name: Punch
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 9c77609f-f234-48ad-a09e-8ab175490faf
-=======
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: be072222-cf32-475e-8a65-88f27a15008e
->>>>>>> Stashed changes
+    m_Id: ae6ffbcf-788e-4223-8ee2-f779a7548ba7
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   kickAction:
-<<<<<<< Updated upstream
     m_Name: Kick
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 39b5cd8f-62d4-4535-badb-b51426f18734
-=======
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e9b0d74a-86c6-4c8c-8fc0-9d96dbf23cbf
->>>>>>> Stashed changes
+    m_Id: a94e47e0-14a6-43d2-a327-61aaf0790595
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   playerController: {fileID: 0}
---- !u!114 &7553200878207485588
+  comboController: {fileID: 0}
+--- !u!114 &-1868362454033205819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

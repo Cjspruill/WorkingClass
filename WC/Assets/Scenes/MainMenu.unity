@@ -3931,7 +3931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigRigPlayerPrefab: {fileID: 2726072151884031245, guid: 797d07472ea36b0409ed3febaa527072, type: 3}
   echoPlayerPrefab: {fileID: 2726072151884031245, guid: fdb2de0b3aaaef74789f0af7b9f3dd03, type: 3}
-  mopPlayerPrefab: {fileID: 2726072151884031245, guid: 6517dfb80c9525045891a87a062d1bef, type: 3}
+  mopPlayerPrefab: {fileID: 2726072151884031245, guid: 57c935db1a52ede48b17474166a4f5d0, type: 3}
   palletPlayerPrefab: {fileID: 2726072151884031245, guid: a7e1e64ef7ea36f49aabfea39f8e559c, type: 3}
   registerPlayerPrefab: {fileID: 2726072151884031245, guid: 0eec7069a4115674fb38b932b26383d9, type: 3}
   scrubsPlayerPrefab: {fileID: 2726072151884031245, guid: b71d53b3c9d718649a199a55fbc16794, type: 3}
