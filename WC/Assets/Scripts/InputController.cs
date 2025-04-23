@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
+
+    [SerializeField] PlayerControls playerControls;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,17 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
+
+    public void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    public void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
 }
