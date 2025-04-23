@@ -13,7 +13,10 @@ public class CharacterStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.y <= -10)
+        {
+            transform.position = new Vector2(transform.position.x,10);
+        }
     }
 
 }

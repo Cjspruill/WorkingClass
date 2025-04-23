@@ -3929,14 +3929,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5552f256b56dab64ca641ad04b70f643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  registerPrefab: {fileID: 4947090747450639678, guid: 6f778d2139d202249a35f8a92481d477, type: 3}
-  scrubsPrefab: {fileID: 8697577854738411903, guid: 43440aa6cfba0ef40b40a3abe51ddbae, type: 3}
-  shiftPrefab: {fileID: 1554126258620019230, guid: 273c95fd53903b147ba75c4d3d7ea994, type: 3}
-  bigRigPrefab: {fileID: 2726072151884031245, guid: 797d07472ea36b0409ed3febaa527072, type: 3}
-  tenurePrefab: {fileID: 9214326812649520431, guid: d0c83624bd63b3c4e8183ca0554e4d5d, type: 3}
-  mopPrefab: {fileID: 4553528023571686583, guid: c810d242a74294a40adce4a2601f1c60, type: 3}
-  palletPrefab: {fileID: 5241624962693960883, guid: 503ef80ece88dfd4f92563f680aeb943, type: 3}
-  echoPrefab: {fileID: 6187377123584852983, guid: 95538887f9efbd24f9502770ffb411e9, type: 3}
+  bigRigPlayerPrefab: {fileID: 2726072151884031245, guid: 797d07472ea36b0409ed3febaa527072, type: 3}
+  echoPlayerPrefab: {fileID: 2726072151884031245, guid: fdb2de0b3aaaef74789f0af7b9f3dd03, type: 3}
+  mopPlayerPrefab: {fileID: 2726072151884031245, guid: 6517dfb80c9525045891a87a062d1bef, type: 3}
+  palletPlayerPrefab: {fileID: 2726072151884031245, guid: a7e1e64ef7ea36f49aabfea39f8e559c, type: 3}
+  registerPlayerPrefab: {fileID: 2726072151884031245, guid: 0eec7069a4115674fb38b932b26383d9, type: 3}
+  scrubsPlayerPrefab: {fileID: 2726072151884031245, guid: b71d53b3c9d718649a199a55fbc16794, type: 3}
+  shiftPlayerPrefab: {fileID: 2726072151884031245, guid: c1147f5b6075d73439c3411a2ed9b4f7, type: 3}
+  tenurePlayerPrefab: {fileID: 2726072151884031245, guid: 89fd6c52f11f0c149a679483d283b100, type: 3}
+  bigRigAIPrefab: {fileID: 2726072151884031245, guid: 845ca7bf6b4c7d546b7887b469ada18b, type: 3}
+  echoAIPrefab: {fileID: 2726072151884031245, guid: f556dbbf09ad3584d8f7b3b574dd1935, type: 3}
+  mopAIPrefab: {fileID: 2726072151884031245, guid: ffa592352873a704b9e68b095a208437, type: 3}
+  palletAIPrefab: {fileID: 2726072151884031245, guid: 800e846351ddd6c4cb0f26c5377300db, type: 3}
+  registerAIPrefab: {fileID: 2726072151884031245, guid: 2611d1d8a37b67f4e9ce3ee5017666f5, type: 3}
+  scrubsAIPrefab: {fileID: 2726072151884031245, guid: af62dbdd79608944e84ea1627bdafbea, type: 3}
+  shiftAIPrefab: {fileID: 2726072151884031245, guid: d7aa03f0b5fdbb940b2014f3019e2ab9, type: 3}
+  tenureAIPrefab: {fileID: 2726072151884031245, guid: 744107b9e1aa9cc49b17d4be847b58e2, type: 3}
   gameMode: 0
   choosingAIPlayer: 0
   oneVsOnePlayerOneSelection: {fileID: 0}
@@ -4243,7 +4251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30.22775, y: -17.1867}
+  m_AnchoredPosition: {x: 30.227722, y: -17.186707}
   m_SizeDelta: {x: 47.992, y: 34.3734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956731026
@@ -7054,7 +7062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1657288700
@@ -8592,7 +8600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2006459439

@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] public GameObject registerPrefab;
-    [SerializeField] public GameObject scrubsPrefab;
-    [SerializeField] public GameObject shiftPrefab;
-    [SerializeField] public GameObject bigRigPrefab;
-    [SerializeField] public GameObject tenurePrefab;
-    [SerializeField] public GameObject mopPrefab;
-    [SerializeField] public GameObject palletPrefab;
-    [SerializeField] public GameObject echoPrefab;
+    [SerializeField] public GameObject bigRigPlayerPrefab;
+    [SerializeField] public GameObject echoPlayerPrefab;
+    [SerializeField] public GameObject mopPlayerPrefab;
+    [SerializeField] public GameObject palletPlayerPrefab;
+    [SerializeField] public GameObject registerPlayerPrefab;
+    [SerializeField] public GameObject scrubsPlayerPrefab;
+    [SerializeField] public GameObject shiftPlayerPrefab;
+    [SerializeField] public GameObject tenurePlayerPrefab;
+
+    [SerializeField] public GameObject bigRigAIPrefab;
+    [SerializeField] public GameObject echoAIPrefab;
+    [SerializeField] public GameObject mopAIPrefab;
+    [SerializeField] public GameObject palletAIPrefab;
+    [SerializeField] public GameObject registerAIPrefab;
+    [SerializeField] public GameObject scrubsAIPrefab;
+    [SerializeField] public GameObject shiftAIPrefab;
+    [SerializeField] public GameObject tenureAIPrefab;
 
     public static GameManager instance;
 
@@ -23,7 +32,6 @@ public class GameManager : MonoBehaviour
 
     public GameModes gameMode;
 
-    [SerializeField] bool choosingAIPlayer = false;
 
     [SerializeField] public GameObject oneVsOnePlayerOneSelection;
     [SerializeField] public GameObject oneVsOnePlayerOpponentSelection;
