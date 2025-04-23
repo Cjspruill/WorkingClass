@@ -228,4 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   speed: 0.01
+  jumpPower: 7
   inputController: {fileID: 0}
+  onGround: 1

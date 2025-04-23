@@ -32,12 +32,12 @@ public class InputController : MonoBehaviour
 
     private void Awake()
     {
+        playerController = GetComponent<PlayerController>();
 
     }
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
