@@ -117,7 +117,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9e307a9d6efba1d429aae052fbf01ba4, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -185,6 +185,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba0e53190c439a4d8eb48eef81365c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f446d1f4-0f59-41b2-b09b-bca57a263263
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  punchAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a9cb9824-ebad-4730-bf79-e4a325e92edb
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  kickAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6ee89309-cd50-49a6-a8a1-fc15b579df27
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  playerController: {fileID: 0}
 --- !u!114 &5022597547404311872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,3 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3e4ebff7284744ab1b711829d03374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 0}
+  speed: 0.01
+  inputController: {fileID: 0}

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
 public class InputController : MonoBehaviour
 {
 
-    [SerializeField] PlayerInput playerInput;
+    [SerializeField]public PlayerInput playerInput;
 
     [SerializeField] InputAction moveAction;
     [SerializeField] InputAction punchAction;
@@ -15,15 +16,13 @@ public class InputController : MonoBehaviour
     //Moves the player
     [SerializeField] PlayerController playerController;
     //Attacks the opponent
-   // [SerializeField] 
+    [SerializeField] ComboController comboController;
 
     public void OnEnable()
     {
         playerInput = new PlayerInput();
 
         playerInput.Player.Enable();
-
-        playerInput.Player.Move.performed += SetMovement;
     }
 
     public void OnDisable()
@@ -38,7 +37,7 @@ public class InputController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        playerController = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -46,12 +45,4 @@ public class InputController : MonoBehaviour
     {
 
     }
-
-    public void SetMovement(InputAction.CallbackContext ctx)
-    {
-        //Pass this to controller
-       Vector2 moveInput = ctx.ReadValue<Vector2>();
-
-    }
-
 }
