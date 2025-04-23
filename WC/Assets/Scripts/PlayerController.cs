@@ -18,4 +18,9 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+
+    public void MoveCharacter(Vector2 direction)
+    {
+
+    }
 }
