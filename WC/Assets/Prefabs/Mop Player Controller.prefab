@@ -117,7 +117,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9e307a9d6efba1d429aae052fbf01ba4, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -186,28 +186,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAction:
+<<<<<<< Updated upstream
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 3546dbc9-8e80-494c-8434-e4179e77b8d9
+=======
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ddb37c75-cd3b-4d4b-961c-255d0277e0e5
+>>>>>>> Stashed changes
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   punchAction:
+<<<<<<< Updated upstream
     m_Name: Punch
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 9c77609f-f234-48ad-a09e-8ab175490faf
+=======
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: be072222-cf32-475e-8a65-88f27a15008e
+>>>>>>> Stashed changes
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   kickAction:
+<<<<<<< Updated upstream
     m_Name: Kick
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 39b5cd8f-62d4-4535-badb-b51426f18734
+=======
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e9b0d74a-86c6-4c8c-8fc0-9d96dbf23cbf
+>>>>>>> Stashed changes
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -225,3 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3e4ebff7284744ab1b711829d03374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 0}
+  speed: 0.01
+  inputController: {fileID: 0}
