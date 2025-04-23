@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3841001047202128992}
   - component: {fileID: 8685324734565072682}
   - component: {fileID: -8275098682243265872}
+  - component: {fileID: -7040000407446719192}
   m_Layer: 0
   m_Name: Scrubs AI Controller
   m_TagString: Untagged
@@ -171,3 +172,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-7040000407446719192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726072151884031245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1729eea8d37d4aa4ea438f0ea982d56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

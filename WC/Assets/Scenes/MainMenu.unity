@@ -3946,7 +3946,6 @@ MonoBehaviour:
   shiftAIPrefab: {fileID: 2726072151884031245, guid: d7aa03f0b5fdbb940b2014f3019e2ab9, type: 3}
   tenureAIPrefab: {fileID: 2726072151884031245, guid: 744107b9e1aa9cc49b17d4be847b58e2, type: 3}
   gameMode: 0
-  choosingAIPlayer: 0
   oneVsOnePlayerOneSelection: {fileID: 0}
   oneVsOnePlayerOpponentSelection: {fileID: 0}
   TwoVsTwoPlayerOneSelectionOne: {fileID: 0}
