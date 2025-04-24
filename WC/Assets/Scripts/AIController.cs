@@ -108,7 +108,6 @@ public class AIController : MonoBehaviour
                 else if (distance < 1.5f)
                 {
                     TryAttack();
-
                 }
 
                 break;

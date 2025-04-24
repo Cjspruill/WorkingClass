@@ -213,6 +213,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   playerController: {fileID: 0}
+  comboController: {fileID: 0}
 --- !u!114 &5473974893554703708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,5 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   speed: 0.01
+  jumpPower: 5
   inputController: {fileID: 0}
+  onGround: 1
+  opponentTransform: {fileID: 0}

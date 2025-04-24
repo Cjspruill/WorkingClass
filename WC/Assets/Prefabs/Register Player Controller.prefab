@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAction:
-    m_Name: 
+    m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 7623da5a-af67-43db-8591-c5f50c985846
@@ -195,7 +195,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   punchAction:
-    m_Name: 
+    m_Name: Punch
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 7afd3bc4-dfca-4857-804a-ccc6f0af1da9
@@ -204,7 +204,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   kickAction:
-    m_Name: 
+    m_Name: Kick
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: eedbabfe-880d-4388-86e0-122ffd728af2
@@ -213,6 +213,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   playerController: {fileID: 0}
+  comboController: {fileID: 0}
 --- !u!114 &-825321907157989393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,5 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   speed: 0.01
+  jumpPower: 5
   inputController: {fileID: 0}
+  onGround: 1
+  opponentTransform: {fileID: 0}
