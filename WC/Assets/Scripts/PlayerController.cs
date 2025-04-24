@@ -62,7 +62,8 @@ public class PlayerController : MonoBehaviour
 
     public void MoveCharacter(Vector2 direction)
     {
-        rigidbody2D.AddForce(direction * speed,ForceMode2D.Impulse);
+        transform.position += (Vector3)direction * speed * Time.deltaTime; 
+        //rigidbody2D.AddForce(direction * speed,ForceMode2D.Impulse);
     }
 
     public void Jump()

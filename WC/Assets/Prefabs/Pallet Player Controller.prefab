@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7394db6917ba23b4cb863c2e50cea455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSelectionScreenSprite: {fileID: 0}
+  characterSelectionScreenImagePrefab: {fileID: 7292119420708616025, guid: 162c0f8b8fb35ed41b4c0340b33bc402, type: 3}
 --- !u!50 &8685324734565072682
 Rigidbody2D:
   serializedVersion: 4

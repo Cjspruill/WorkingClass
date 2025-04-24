@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7394db6917ba23b4cb863c2e50cea455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSelectionScreenSprite: {fileID: 21300000, guid: 24eb014a1381b6c48b8b0bc04ae9bbba, type: 3}
+  characterSelectionScreenImagePrefab: {fileID: 7292119420708616025, guid: 162c0f8b8fb35ed41b4c0340b33bc402, type: 3}
 --- !u!50 &8685324734565072682
 Rigidbody2D:
   serializedVersion: 4
@@ -161,7 +163,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16936994, y: 0.03629446}
+  m_Offset: {x: 0.09678173, y: 0.3508432}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -172,7 +174,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.984659, y: 12.251117}
+  m_Size: {x: 8.839483, y: 11.622019}
   m_EdgeRadius: 0
 --- !u!114 &4998273334827006215
 MonoBehaviour:
@@ -229,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  speed: 0.01
+  speed: 2
   jumpPower: 7
   inputController: {fileID: 0}
   onGround: 1
