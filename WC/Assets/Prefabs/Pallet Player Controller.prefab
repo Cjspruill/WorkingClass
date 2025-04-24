@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAction:
-    m_Name: 
+    m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 3fa2fcf0-c878-4020-962f-07be1d597bb8
@@ -195,7 +195,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   punchAction:
-    m_Name: 
+    m_Name: Punch
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 987ddc3c-314b-4c89-a81d-fc34e5a0bd9f
@@ -204,7 +204,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   kickAction:
-    m_Name: 
+    m_Name: Kick
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: f1b39435-d759-4b44-b18a-217b22c59b3f
