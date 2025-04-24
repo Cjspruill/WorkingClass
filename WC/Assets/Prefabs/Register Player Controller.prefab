@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8275098682243265872}
   - component: {fileID: -619387009961111859}
   - component: {fileID: -825321907157989393}
+  - component: {fileID: -6335382998211459594}
   m_Layer: 0
   m_Name: Register Player Controller
   m_TagString: Untagged
@@ -233,3 +234,26 @@ MonoBehaviour:
   inputController: {fileID: 0}
   onGround: 1
   opponentTransform: {fileID: 0}
+--- !u!114 &-6335382998211459594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726072151884031245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56afdf2f5b38ab40bfba101f296b457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  maxHealth: 100
+  healthRegen: 0.25
+  activeTimer: 0
+  activeTime: 0
+  activeTimeMin: 10
+  activeTimeMax: 15
+  cooldownTimer: 0
+  cooldownTime: 0
+  cooldownTimeMin: 5
+  cooldownTimeMax: 10

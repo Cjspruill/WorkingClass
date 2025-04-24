@@ -5,7 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 
-    [SerializeField] float health = 100f;
+    [SerializeField] float health = 10f;
+    [SerializeField] public float maxHealth = 100;
     [SerializeField] float healthRegen = 0.25f;
     [SerializeField] float activeTimer;
     [SerializeField] float activeTime;
@@ -17,10 +18,12 @@ public class Health : MonoBehaviour
     [SerializeField] float cooldownTimeMin = 5f;
     [SerializeField] float cooldownTimeMax = 10f;
 
+    public float GetHealth { get => health; set => health = value; }
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("GiveHealth",0,healthRegen);
+      
         activeTime = Random.Range(activeTimeMin, activeTimeMax);
         cooldownTime = Random.Range(cooldownTimeMin, cooldownTimeMax);
     }
@@ -31,14 +34,12 @@ public class Health : MonoBehaviour
         activeTimer++;
         if (activeTimer > activeTime) 
         {
-            CancelInvoke("GiveHealth");
             cooldownTimer++;
             if (cooldownTimer > cooldownTime) 
             {
                 activeTimer = 0;
                 cooldownTimer = 0;
-                InvokeRepeating("GiveHealth",0,healthRegen);
-                
+                GiveHealth(healthRegen);            
             }
         }
     }
@@ -46,18 +47,18 @@ public class Health : MonoBehaviour
     public void TakeDamage(float value)
     
     {
-        health -= value; //health = health - value;    health equals health minus value
-        if (health <= 0)
+        GetHealth -= value; //health = health - value;    health equals health minus value
+        if (GetHealth <= 0)
         {
             Debug.Log("BOOM HEADSHOT");
         }
     }
     public void GiveHealth(float value) 
     {
-        health += value;
-        if (health > 100f) 
+        GetHealth += value;
+        if (GetHealth > 100f) 
         {
-            health = 100f;
+            GetHealth = 100f;
         }
     }
 }

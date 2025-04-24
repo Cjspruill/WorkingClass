@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8275098682243265872}
   - component: {fileID: 4998273334827006215}
   - component: {fileID: -1868362454033205819}
+  - component: {fileID: -4464607285502543688}
   m_Layer: 0
   m_Name: Echo Player Controller
   m_TagString: Untagged
@@ -30,10 +31,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2726072151884031245}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.0000002533197}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -233,3 +234,26 @@ MonoBehaviour:
   inputController: {fileID: 0}
   onGround: 1
   opponentTransform: {fileID: 0}
+--- !u!114 &-4464607285502543688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726072151884031245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56afdf2f5b38ab40bfba101f296b457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  maxHealth: 100
+  healthRegen: 0.25
+  activeTimer: 0
+  activeTime: 0
+  activeTimeMin: 10
+  activeTimeMax: 15
+  cooldownTimer: 0
+  cooldownTime: 0
+  cooldownTimeMin: 5
+  cooldownTimeMax: 10
