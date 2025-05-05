@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ComboController : MonoBehaviour
 {
+    [SerializeField] BoxCollider2D attackCollider;
+
     // Start is called before the first frame update
     void Start()
     {
