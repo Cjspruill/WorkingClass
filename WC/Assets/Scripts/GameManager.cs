@@ -36,11 +36,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject oneVsOnePlayerOneSelection;
     [SerializeField] public GameObject oneVsOnePlayerOpponentSelection;
 
-    [SerializeField] public GameObject TwoVsTwoPlayerOneSelectionOne;
-    [SerializeField] public GameObject TwoVsTwoPlayerOneSelectionTwo;
-
-    [SerializeField] public GameObject TwoVsTwoPlayerOpponentSelectionOne;
-    [SerializeField] public GameObject TwoVsTwoPlayerOppoenntSelectionTwo;
     public void Awake()
     {
         if(instance == null)
