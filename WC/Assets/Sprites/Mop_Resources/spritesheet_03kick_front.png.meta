@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: e5a0847ced488ad4891030f959964465
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_0
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1353
+        width: 228
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5efbe7f1410e6b4b95994d594d123eb
+      internalID: 252678563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_1
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1352
+        width: 224
+        height: 329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2160a63af4094974796d6f40346b1b1f
+      internalID: -1396066627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_2
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 1353
+        width: 224
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8fa18b3993bfa148b80ba3a256ffea1
+      internalID: 13822074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_3
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 1353
+        width: 223
+        height: 335
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9725695727d2646bf115c1b35821d8
+      internalID: -420392974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_4
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 1353
+        width: 221
+        height: 336
+      alignment: 9
+      pivot: {x: 0.5687783, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b691b95a704e8414f883c0ca72bbcead
+      internalID: 2059400252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_5
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 1353
+        width: 221
+        height: 338
+      alignment: 9
+      pivot: {x: 0.5665158, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfb58fcfca3cca4183bd8285ca8de5b
+      internalID: -200639305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_6
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 905
+        width: 253
+        height: 338
+      alignment: 9
+      pivot: {x: 0.5256917, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6eeec045fceee4b825e7a217494fde
+      internalID: 363149111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_7
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 905
+        width: 262
+        height: 339
+      alignment: 9
+      pivot: {x: 0.539313, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c606c4dcac692dd41bf6f1ae3a720ade
+      internalID: -908119456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_8
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 905
+        width: 261
+        height: 339
+      alignment: 9
+      pivot: {x: 0.53946364, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43b65247339b424ba2756139c2ca12d
+      internalID: 1489246781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_9
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 905
+        width: 325
+        height: 331
+      alignment: 9
+      pivot: {x: 0.552, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4526a1a150c83147b8bc33db32926d4
+      internalID: -1041331518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_10
+      rect:
+        serializedVersion: 2
+        x: 2286
+        y: 905
+        width: 325
+        height: 334
+      alignment: 9
+      pivot: {x: 0.5830769, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765caf3517cc0954eb331fdbe074212d
+      internalID: -1151953982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_11
+      rect:
+        serializedVersion: 2
+        x: 2831
+        y: 905
+        width: 324
+        height: 334
+      alignment: 9
+      pivot: {x: 0.60370374, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1cbaff3ba1d18548a53e10a6d0109f2
+      internalID: 1361847884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_12
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 457
+        width: 325
+        height: 333
+      alignment: 9
+      pivot: {x: 0.5581538, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e397e13f75f7d954a98dea8b39ab1064
+      internalID: -1015095960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_13
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 457
+        width: 325
+        height: 333
+      alignment: 9
+      pivot: {x: 0.56892306, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4da25459f68b5e45af208a9d057c7a0
+      internalID: 1861452831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_14
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 457
+        width: 297
+        height: 335
+      alignment: 9
+      pivot: {x: 0.56666666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a477eeb663b0d4f4eb5dd0873da18be1
+      internalID: 1903624641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_15
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 457
+        width: 298
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5442953, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aba8389476db0941afefb9801e13f35
+      internalID: 357388057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_16
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 457
+        width: 298
+        height: 333
+      alignment: 9
+      pivot: {x: 0.58859056, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4bbe8976d9998b47b07c3ec923cbc9d
+      internalID: 1703307619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_17
+      rect:
+        serializedVersion: 2
+        x: 2903
+        y: 457
+        width: 228
+        height: 335
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0169407ac46a7d34a99e5725188b1b8a
+      internalID: 1812334207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_18
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 9
+        width: 228
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bf290a08982d44594f6397808f5c96
+      internalID: -2129653853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_19
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 9
+        width: 227
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55bc959baa65c9c4f8dc59e708c8d9a6
+      internalID: 2093052400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_20
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 7
+        width: 228
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02e79911bd6b864fa4d83252bf4ed91
+      internalID: -280273383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_03kick_front_21
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 7
+        width: 228
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc8f5caaf1385741a68bb0a13df59a2
+      internalID: -1332796244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0b754c2b7edca4e4cb233c7fd59d5441
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spritesheet_03kick_front_0: 252678563
+      spritesheet_03kick_front_1: -1396066627
+      spritesheet_03kick_front_10: -1151953982
+      spritesheet_03kick_front_11: 1361847884
+      spritesheet_03kick_front_12: -1015095960
+      spritesheet_03kick_front_13: 1861452831
+      spritesheet_03kick_front_14: 1903624641
+      spritesheet_03kick_front_15: 357388057
+      spritesheet_03kick_front_16: 1703307619
+      spritesheet_03kick_front_17: 1812334207
+      spritesheet_03kick_front_18: -2129653853
+      spritesheet_03kick_front_19: 2093052400
+      spritesheet_03kick_front_2: 13822074
+      spritesheet_03kick_front_20: -280273383
+      spritesheet_03kick_front_21: -1332796244
+      spritesheet_03kick_front_3: -420392974
+      spritesheet_03kick_front_4: 2059400252
+      spritesheet_03kick_front_5: -200639305
+      spritesheet_03kick_front_6: 363149111
+      spritesheet_03kick_front_7: -908119456
+      spritesheet_03kick_front_8: 1489246781
+      spritesheet_03kick_front_9: -1041331518
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

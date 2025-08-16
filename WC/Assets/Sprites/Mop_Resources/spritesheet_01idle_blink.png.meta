@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 9c66d76c0dd273a4cabd0994daa5a5be
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_0
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1803
+        width: 229
+        height: 329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f438e9d8ffffffff0800000000000000
+      internalID: -1918991537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_1
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1803
+        width: 230
+        height: 331
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbad9323000000000800000000000000
+      internalID: 842652347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_2
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 1804
+        width: 231
+        height: 331
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b299232affffffff0800000000000000
+      internalID: -1573742293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_3
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 1804
+        width: 231
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28f752effffffff0800000000000000
+      internalID: -497551313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_4
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1804
+        width: 232
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cacc873000000000800000000000000
+      internalID: 931973828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_5
+      rect:
+        serializedVersion: 2
+        x: 2903
+        y: 1804
+        width: 234
+        height: 335
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbde0aeffffffff0800000000000000
+      internalID: -368124989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_6
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1355
+        width: 234
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742bf155000000000800000000000000
+      internalID: 1428140615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_7
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 1355
+        width: 236
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05c9a25000000000800000000000000
+      internalID: 1386857739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_8
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 1355
+        width: 238
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a322e32000000000800000000000000
+      internalID: 602022818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_9
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 1355
+        width: 239
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adee8d36000000000800000000000000
+      internalID: 1675161306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_10
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 1355
+        width: 238
+        height: 341
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec6afefffffffff0800000000000000
+      internalID: -17142552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_11
+      rect:
+        serializedVersion: 2
+        x: 2901
+        y: 1355
+        width: 238
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98bc7bb5000000000800000000000000
+      internalID: 1538771849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_12
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 907
+        width: 239
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5d7857000000000800000000000000
+      internalID: 1971836406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_13
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 907
+        width: 238
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33fbdc0cffffffff0800000000000000
+      internalID: -1060257997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_14
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 907
+        width: 238
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0f31f6000000000800000000000000
+      internalID: 1863577808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_15
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 906
+        width: 237
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a525680000000000800000000000000
+      internalID: 140846501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_16
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 908
+        width: 236
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6524bcfffffffff0800000000000000
+      internalID: -55302803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_17
+      rect:
+        serializedVersion: 2
+        x: 2903
+        y: 907
+        width: 234
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a80c61000000000800000000000000
+      internalID: 381717071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_18
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 459
+        width: 234
+        height: 336
+      alignment: 9
+      pivot: {x: 0.5, y: 0.000000029802322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fac1ef7000000000800000000000000
+      internalID: 2145503992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_19
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 457
+        width: 232
+        height: 335
+      alignment: 9
+      pivot: {x: 0.5, y: 0.000000029802322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4efdadc8ffffffff0800000000000000
+      internalID: -1931812892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_20
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 459
+        width: 233
+        height: 335
+      alignment: 9
+      pivot: {x: 0.5, y: 0.000000029802322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be26426000000000800000000000000
+      internalID: 1648766643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_21
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 459
+        width: 231
+        height: 334
+      alignment: 9
+      pivot: {x: 0.5, y: 0.000000029802322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de188224000000000800000000000000
+      internalID: 1109950957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_22
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 459
+        width: 231
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.000000029802322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62728974000000000800000000000000
+      internalID: 1201153830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_23
+      rect:
+        serializedVersion: 2
+        x: 2903
+        y: 459
+        width: 231
+        height: 331
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb3ffefffffffff0800000000000000
+      internalID: -16827395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_24
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 10
+        width: 230
+        height: 331
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e1111dffffffff0800000000000000
+      internalID: -787407326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_25
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 11
+        width: 229
+        height: 329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148e5f12000000000800000000000000
+      internalID: 569763905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_26
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 11
+        width: 230
+        height: 329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296eeff8ffffffff0800000000000000
+      internalID: -1879120238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_27
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 11
+        width: 229
+        height: 329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9a96bbffffffff0800000000000000
+      internalID: -1150703117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_28
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 11
+        width: 229
+        height: 329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2fc36bffffffff0800000000000000
+      internalID: -1237519653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_01idle_blink_29
+      rect:
+        serializedVersion: 2
+        x: 2903
+        y: 11
+        width: 230
+        height: 329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42b25659ffffffff0800000000000000
+      internalID: -1788531932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1b549264bfefe7c439e0f5dba34843c1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spritesheet_01idle_blink_0: -1918991537
+      spritesheet_01idle_blink_1: 842652347
+      spritesheet_01idle_blink_10: -17142552
+      spritesheet_01idle_blink_11: 1538771849
+      spritesheet_01idle_blink_12: 1971836406
+      spritesheet_01idle_blink_13: -1060257997
+      spritesheet_01idle_blink_14: 1863577808
+      spritesheet_01idle_blink_15: 140846501
+      spritesheet_01idle_blink_16: -55302803
+      spritesheet_01idle_blink_17: 381717071
+      spritesheet_01idle_blink_18: 2145503992
+      spritesheet_01idle_blink_19: -1931812892
+      spritesheet_01idle_blink_2: -1573742293
+      spritesheet_01idle_blink_20: 1648766643
+      spritesheet_01idle_blink_21: 1109950957
+      spritesheet_01idle_blink_22: 1201153830
+      spritesheet_01idle_blink_23: -16827395
+      spritesheet_01idle_blink_24: -787407326
+      spritesheet_01idle_blink_25: 569763905
+      spritesheet_01idle_blink_26: -1879120238
+      spritesheet_01idle_blink_27: -1150703117
+      spritesheet_01idle_blink_28: -1237519653
+      spritesheet_01idle_blink_29: -1788531932
+      spritesheet_01idle_blink_3: -497551313
+      spritesheet_01idle_blink_4: 931973828
+      spritesheet_01idle_blink_5: -368124989
+      spritesheet_01idle_blink_6: 1428140615
+      spritesheet_01idle_blink_7: 1386857739
+      spritesheet_01idle_blink_8: 602022818
+      spritesheet_01idle_blink_9: 1675161306
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

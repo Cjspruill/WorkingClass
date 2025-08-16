@@ -1,0 +1,589 @@
+fileFormatVersion: 2
+guid: 36a672172ef341547b0bd1847ed279d9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 904
+        width: 231
+        height: 335
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f683e6909a325c489aef829f44e3018
+      internalID: -1981518886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_1
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 904
+        width: 229
+        height: 335
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484caff671a5f3a43b4fa02e1b309aa7
+      internalID: 1866311253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_2
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 904
+        width: 173
+        height: 342
+      alignment: 9
+      pivot: {x: 0.44, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc2a2dc6a0ea51468cad93a1b093a53
+      internalID: -1534661697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_3
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 904
+        width: 175
+        height: 342
+      alignment: 9
+      pivot: {x: 0.41, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b62f330030f081448118cabf59c6f15
+      internalID: 1604333571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_4
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 904
+        width: 200
+        height: 329
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd985a9f3b06244f8258a18ef24f378
+      internalID: -71378390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_5
+      rect:
+        serializedVersion: 2
+        x: 2955
+        y: 904
+        width: 201
+        height: 329
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76766c08cde9e0b46af2786c0c45f2d3
+      internalID: 77720633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_6
+      rect:
+        serializedVersion: 2
+        x: 3491
+        y: 904
+        width: 281
+        height: 318
+      alignment: 9
+      pivot: {x: 0.22, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9003a85e5add2e54b8710eca1491e07a
+      internalID: -887069154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 456
+        width: 281
+        height: 318
+      alignment: 9
+      pivot: {x: 0.21, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eefbcf7912ed0794982c759eb824474c
+      internalID: 1593143121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_8
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 456
+        width: 280
+        height: 314
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21da89ff0cd6b0d46b1c37ef8d1d273a
+      internalID: 1225466204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_9
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 456
+        width: 281
+        height: 314
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47831699784163341b5e6394dc5cf032
+      internalID: 2110573939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_10
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 458
+        width: 279
+        height: 314
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c660059e3e46d45aca2cfffefdd1f0
+      internalID: 187540498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_11
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 456
+        width: 281
+        height: 314
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13ce636e05ec1a49bcf515673f45c42
+      internalID: 468560503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_12
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 456
+        width: 280
+        height: 314
+      alignment: 9
+      pivot: {x: 0.19, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11158d362fee56a44842daaaa2e7dc33
+      internalID: -754669551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_13
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 456
+        width: 281
+        height: 314
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6121a3d5261fa2f4990dd6fea866b915
+      internalID: 473143771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_14
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 8
+        width: 280
+        height: 314
+      alignment: 9
+      pivot: {x: 0.18, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb36c7deb4eb29346abe1d8b76a2fbb6
+      internalID: -393730563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_15
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 8
+        width: 280
+        height: 314
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645fd8fef333ce948afc42ad6c75615e
+      internalID: 1124291223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_16
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 8
+        width: 281
+        height: 314
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1682afd62ddf39a44850b035d6c8b5b4
+      internalID: -898551386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_17
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 9
+        width: 169
+        height: 339
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecbe8a373f9a6a44d8cade453bcefbbc
+      internalID: -1890315793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_18
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 8
+        width: 171
+        height: 339
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aab7fdc757e0cd49856051752676517
+      internalID: -1727759526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_19
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 8
+        width: 225
+        height: 335
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0c012c1d70a7c48bc5945ef66f344b
+      internalID: -1416870782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_05round_kick_20
+      rect:
+        serializedVersion: 2
+        x: 3447
+        y: 8
+        width: 230
+        height: 335
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3b4006f2a0e0b41b1dea178557300e
+      internalID: 1678668832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a5690f0f29ccc3845bde1fb9df09d6a7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spritesheet_05round_kick_0: -1981518886
+      spritesheet_05round_kick_1: 1866311253
+      spritesheet_05round_kick_10: 187540498
+      spritesheet_05round_kick_11: 468560503
+      spritesheet_05round_kick_12: -754669551
+      spritesheet_05round_kick_13: 473143771
+      spritesheet_05round_kick_14: -393730563
+      spritesheet_05round_kick_15: 1124291223
+      spritesheet_05round_kick_16: -898551386
+      spritesheet_05round_kick_17: -1890315793
+      spritesheet_05round_kick_18: -1727759526
+      spritesheet_05round_kick_19: -1416870782
+      spritesheet_05round_kick_2: -1534661697
+      spritesheet_05round_kick_20: 1678668832
+      spritesheet_05round_kick_3: 1604333571
+      spritesheet_05round_kick_4: -71378390
+      spritesheet_05round_kick_5: 77720633
+      spritesheet_05round_kick_6: -887069154
+      spritesheet_05round_kick_7: 1593143121
+      spritesheet_05round_kick_8: 1225466204
+      spritesheet_05round_kick_9: 2110573939
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

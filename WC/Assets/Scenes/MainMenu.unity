@@ -4337,10 +4337,6 @@ MonoBehaviour:
   gameMode: 0
   oneVsOnePlayerOneSelection: {fileID: 0}
   oneVsOnePlayerOpponentSelection: {fileID: 0}
-  TwoVsTwoPlayerOneSelectionOne: {fileID: 0}
-  TwoVsTwoPlayerOneSelectionTwo: {fileID: 0}
-  TwoVsTwoPlayerOpponentSelectionOne: {fileID: 0}
-  TwoVsTwoPlayerOppoenntSelectionTwo: {fileID: 0}
 --- !u!4 &764464911
 Transform:
   m_ObjectHideFlags: 0
