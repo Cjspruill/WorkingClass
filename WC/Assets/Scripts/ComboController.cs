@@ -1,72 +1,120 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ComboController : MonoBehaviour
 {
-    [SerializeField] InputController inputController;
-    [SerializeField] Animator animator;
 
-    [SerializeField] BoxCollider2D attackColliderLeft;
-    [SerializeField] BoxCollider2D attackColliderRight;
-
-
-    [SerializeField] bool facingRight;
-
-    private bool isAttacking = false;
-
-    private bool punchPressed;
-    private bool kickPressed;
-
-    // Start is called before the first frame update
-    void Start()
+    private struct ComboEntry
     {
-        inputController = GetComponent<InputController>();
-        animator = GetComponent<Animator>();
-        facingRight = GetComponent<SpriteRenderer>().flipX;
+        public int moveDir;
+        public bool punch;
+        public ComboEntry(int moveDir, bool punch)
+        {
+            this.moveDir = moveDir;
+            this.punch = punch;
+        }
     }
 
-    // Update is called once per frame
+
+    [SerializeField] InputController inputController;
+    [SerializeField] Animator animator;
+    [SerializeField] BoxCollider2D attackColliderLeft;
+    [SerializeField] BoxCollider2D attackColliderRight;
+    [SerializeField] bool facingRight;
+
+
+    private Queue<ComboEntry> comboQueue = new Queue<ComboEntry>();
+
+    private bool attackLocked = false;     // short lock to prevent double triggers
+    private float attackLockTimer = 0f;
+    private float attackLockDuration = 0.08f; // ~5 frames at 60fps
+
+    private int currentMoveDir = -1;
+    private bool currentPunch = true;
+    private bool inputConsumedThisFrame = false;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        inputController = GetComponent<InputController>();
+    }
     void Update()
     {
+        inputConsumedThisFrame = false;
+
+        // Decrease short lock timer
+        if (attackLocked)
+        {
+            attackLockTimer -= Time.deltaTime;
+            if (attackLockTimer <= 0f) attackLocked = false;
+        }
+
         Vector2 moveInput = inputController.playerInput.Player.Move.ReadValue<Vector2>();
+        bool punchPressed = inputController.playerInput.Player.Punch.triggered;
+        bool kickPressed = inputController.playerInput.Player.Kick.triggered;
 
-        // Buffer the inputs
-        if (inputController.playerInput.Player.Punch.triggered)
-            punchPressed = true;
-
-        if (inputController.playerInput.Player.Kick.triggered)
-            kickPressed = true;
-
-        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
-
-        // Determine punch type based on movement
-        int punchType = 0; // default
-        if (moveInput.x > 0.1f) punchType = 1;    // forward
-        else if (moveInput.y < -0.1f) punchType = 2; // down
-        else if (moveInput.x < -0.1f) punchType = 3;  // back
-
-        // Punch
-        if (punchPressed && !state.IsTag("Punch"))
+        if ((punchPressed || kickPressed) && !inputConsumedThisFrame)
         {
-            animator.SetInteger("PunchType", punchType);
-            animator.SetTrigger("Punch");
-            punchPressed = false;
+            bool punch = punchPressed;
+            int moveDir = GetMoveDir(moveInput, punch);
+
+            if (!attackLocked)
+            {
+                StartAttack(moveDir, punch);
+                inputConsumedThisFrame = true;
+            }
+            else if (moveDir != currentMoveDir || punch != currentPunch)
+            {
+                comboQueue.Enqueue(new ComboEntry(moveDir, punch));
+                inputConsumedThisFrame = true;
+            }
         }
+    }
 
-        // Determine kick type based on movement
-        int kickType = 0; // default
-        if (moveInput.x > 0.1f) kickType = 1;    // forward
-        else if (moveInput.y < -0.1f) kickType = 2; // down
-        else if (moveInput.x < -0.1f) kickType = 3;  // back
+    private void StartAttack(int moveDir, bool punch)
+    {
+        attackLocked = true;
+        attackLockTimer = attackLockDuration;
 
-        // Kick
-        if (kickPressed && !state.IsTag("Kick"))
+        currentMoveDir = moveDir;
+        currentPunch = punch;
+
+        animator.SetInteger("MoveDir", moveDir);
+
+        if (punch) animator.SetTrigger("Punch");
+        else animator.SetTrigger("Kick");
+    }
+
+    // Animation Event at the end of each attack
+    public void OnAttackFinished()
+    {
+        currentMoveDir = -1;
+
+        if (comboQueue.Count > 0)
         {
-            animator.SetInteger("KickType", kickType);
-            animator.SetTrigger("Kick");
-            kickPressed = false;
+            ComboEntry next = comboQueue.Dequeue();
+            StartAttack(next.moveDir, next.punch);
         }
+    }
+
+    private int GetMoveDir(Vector2 moveInput, bool punch)
+    {
+        int moveDir = 0;
+        if (punch)
+        {
+            if (Mathf.Abs(moveInput.x) < 0.1f && Mathf.Abs(moveInput.y) < 0.1f) moveDir = 0;
+            else if (moveInput.x > 0.1f) moveDir = 1;
+            else if (moveInput.x < -0.1f) moveDir = 2;
+            else if (moveInput.y < -0.1f) moveDir = 3;
+        }
+        else
+        {
+            if (Mathf.Abs(moveInput.x) < 0.1f && Mathf.Abs(moveInput.y) < 0.1f) moveDir = 0;
+            else if (moveInput.x > 0.1f) moveDir = 1;
+            else if (moveInput.x < -0.1f) moveDir = 2;
+        }
+        return moveDir;
     }
 
 
