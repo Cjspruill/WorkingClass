@@ -62,6 +62,9 @@ public class ComboController : MonoBehaviour
     }
     void Update()
     {
+        if (!GameManager.instance.GetRoundActive) return;
+        if (GetComponent<Health>().GetHealth <= 0) return;
+
         facingRight = playerController.spriteRenderer.flipX;
 
         if (!facingRight)        

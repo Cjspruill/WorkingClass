@@ -90,6 +90,8 @@ public class AIController : MonoBehaviour
                 CheckAndTurnPlayer();
         }
 
+        if (!GameManager.instance.GetRoundActive) return;
+        if (GetComponent<Health>().GetHealth <= 0) return;
 
         switch (curState)
         {

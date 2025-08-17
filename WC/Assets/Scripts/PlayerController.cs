@@ -41,6 +41,9 @@ public class PlayerController : MonoBehaviour
 
             }
 
+            if (!GameManager.instance.GetRoundActive) return;
+            if (GetComponent<Health>().GetHealth <= 0) return;
+
             if (!isBlocking)
             {
                 if (comboController.attackLocked) return;

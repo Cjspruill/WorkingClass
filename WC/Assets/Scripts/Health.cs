@@ -26,6 +26,17 @@ public class Health : MonoBehaviour
 
     public float GetHealth { get => health; set => health = value; }
 
+
+    private void OnEnable()
+    {
+        GameManager.OnRoundStart += ResetHealth;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnRoundStart -= ResetHealth;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,24 +62,25 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float value)
+   public void TakeDamage(float value)
+{
+    if (!canBeHurt) return;
+
+    GetHealth -= value;
+    hurtBoxSpriteRenderer.enabled = true;
+    animator.SetTrigger("Hurt");
+
+    if (GetHealth <= 0)
     {
-        if (!canBeHurt) return; // exit if still in cooldown
-
-        GetHealth -= value;
-
-        hurtBoxSpriteRenderer.enabled = true;
-
-        animator.SetTrigger("Hurt");
-
-        if (GetHealth <= 0)
-        {
-            animator.SetTrigger("Knockout");
-        }
-
-        StartCoroutine(TurnOffHitBox());
-        StartCoroutine(HurtCooldownCoroutine());
+        animator.SetTrigger("Knockout");
+        // Instead of waiting for round start, we start GetUp here
+        StartCoroutine(GetUp());
+        GameManager.instance.EndRound();
     }
+
+    StartCoroutine(TurnOffHitBox());
+    StartCoroutine(HurtCooldownCoroutine());
+}
     IEnumerator HurtCooldownCoroutine()
     {
         canBeHurt = false;                // block further hurt triggers
@@ -88,5 +100,17 @@ public class Health : MonoBehaviour
     {
         yield return new WaitForSeconds(.15f);
         hurtBoxSpriteRenderer.enabled = false;
+    }
+
+
+    void ResetHealth()
+    {
+        health = maxHealth;
+    }
+    
+    IEnumerator GetUp()
+    {
+        yield return new WaitForSeconds(3);
+        animator.SetTrigger("RoundStart");
     }
 }
