@@ -12,6 +12,7 @@ public class InputController : MonoBehaviour
     [SerializeField] InputAction moveAction;
     [SerializeField] InputAction punchAction;
     [SerializeField] InputAction kickAction;
+    [SerializeField] InputAction blockAction;
 
     //Moves the player
     [SerializeField] PlayerController playerController;
@@ -33,16 +34,6 @@ public class InputController : MonoBehaviour
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 }

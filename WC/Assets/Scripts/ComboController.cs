@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ComboController : MonoBehaviour
@@ -30,9 +31,9 @@ public class ComboController : MonoBehaviour
     [SerializeField] Vector2 groundColliderFlipped = new Vector2(.25f, 1.35f);
 
     [SerializeField] bool facingRight;
-    [SerializeField] bool attackLocked = false;     // short lock to prevent double triggers
+    [SerializeField] public bool attackLocked = false;     // short lock to prevent double triggers
     [SerializeField] float attackLockTimer = 0f;
-    [SerializeField] float attackLockDuration = 0.08f; // ~5 frames at 60fps
+    [SerializeField] float attackLockDuration = 0.5f; // ~5 frames at 60fps
     [SerializeField] int currentMoveDir = -1;
     [SerializeField] bool currentPunch = true;
     [SerializeField] bool inputConsumedThisFrame = false;
@@ -81,6 +82,7 @@ public class ComboController : MonoBehaviour
         Vector2 moveInput = inputController.playerInput.Player.Move.ReadValue<Vector2>();
         bool punchPressed = inputController.playerInput.Player.Punch.triggered;
         bool kickPressed = inputController.playerInput.Player.Kick.triggered;
+        bool isBlocking = playerController.isBlocking;
 
         if ((punchPressed || kickPressed) && !inputConsumedThisFrame)
         {
@@ -98,10 +100,16 @@ public class ComboController : MonoBehaviour
                 inputConsumedThisFrame = true;
             }
         }
+
+
+        animator.SetBool("IsBlocking", isBlocking);
+        
     }
 
     private void StartAttack(int moveDir, bool punch)
     {
+
+        if (!playerController.onGround) return;
         // Lock the attack to prevent double triggers
         attackLocked = true;
         attackLockTimer = attackLockDuration;

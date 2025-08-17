@@ -427,7 +427,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1918991537, guid: 9c66d76c0dd273a4cabd0994daa5a5be, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -595,8 +595,8 @@ MonoBehaviour:
   comboIndex: 0
   maxComboHits: 3
   attackInterval: 0.5
-  idleTimeMin: 3
-  idleTimeMax: 8
+  idleTimeMin: 0.25
+  idleTimeMax: 2
   restTimeMin: 0.25
   restTimeMax: 1
   jabLeftPosition: {fileID: 8123150269395227682}
@@ -634,7 +634,9 @@ MonoBehaviour:
   cooldownTime: 0
   cooldownTimeMin: 5
   cooldownTimeMax: 10
+  hurtCooldown: 0.5
   hurtBoxSpriteRenderer: {fileID: 1310521365419520652}
+  animator: {fileID: 0}
 --- !u!95 &6317379019039555287
 Animator:
   serializedVersion: 5

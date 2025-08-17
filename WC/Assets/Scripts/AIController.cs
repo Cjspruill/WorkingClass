@@ -114,17 +114,12 @@ public class AIController : MonoBehaviour
 
         if (dist > chaseRange)
         {
-            // Do nothing if player far away
+            // Player too far, truly idle
             return;
         }
 
-        idleTimer += Time.deltaTime;
-        if (idleTimer >= idleDuration)
-        {
-            idleTimer = 0;
-            idleDuration = Random.Range(idleTimeMin, idleTimeMax);
-            curState = AIStates.Chase;
-        }
+        // Player is close — skip idle and start chasing
+        curState = AIStates.Chase;
     }
 
     void HandleChase()
@@ -164,43 +159,42 @@ public class AIController : MonoBehaviour
             attackTimer = 0;
             comboIndex++;
 
-            // Randomly choose punch or kick
             bool usePunch = Random.value < 0.5f;
+            int moveDir;
 
             if (usePunch)
             {
-                // Punch directions: 0 to 3
-                int moveDir = Random.Range(0, 4);
+                moveDir = Random.Range(0, 4);
                 animator.SetInteger("MoveDir", moveDir);
                 animator.SetTrigger("Punch");
             }
             else
             {
-                // Kick directions: 0 to 2
-                int moveDir = Random.Range(0, 3);
+                moveDir = Random.Range(0, 3);
                 animator.SetInteger("MoveDir", moveDir);
                 animator.SetTrigger("Kick");
             }
 
-            // Visual feedback (remove later)
             spriteRenderer.color = Color.green;
             Invoke("CancelAttackColor", 0.1f);
 
-            // Random chance to abort combo early
-            if (Random.value < 0.1f && comboIndex < maxComboHits)
+            float dist = Vector2.Distance(transform.position, playerController.transform.position);
+
+            // If combo finished, go to Rest
+            if (comboIndex >= maxComboHits)
             {
                 curState = AIStates.Rest;
                 PrepareRest();
-                return;
             }
-
-            if (comboIndex >= maxComboHits)
+            // If combo not finished but player moves away, also go to Rest
+            else if (dist > attackRange && Random.value < 0.1f)
             {
                 curState = AIStates.Rest;
                 PrepareRest();
             }
         }
     }
+
 
     void CancelAttackColor()
     {
@@ -216,9 +210,25 @@ public class AIController : MonoBehaviour
     void HandleRest()
     {
         restTimer += Time.deltaTime;
+        float dist = Vector2.Distance(transform.position, playerController.transform.position);
+
         if (restTimer >= restDuration)
         {
-            curState = AIStates.Idle;
+            if (dist <= attackRange)
+            {
+                // Player still close — start next combo immediately
+                StartCombo();
+            }
+            else if (dist <= chaseRange)
+            {
+                // Player nearby — chase
+                curState = AIStates.Chase;
+            }
+            else
+            {
+                // Player far — idle
+                curState = AIStates.Idle;
+            }
         }
     }
 

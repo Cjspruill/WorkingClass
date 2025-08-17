@@ -12,9 +12,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpPower = 50f;
 
     [SerializeField] InputController inputController;
+    [SerializeField] ComboController comboController;
 
-    [SerializeField] bool onGround = true;
-
+    [SerializeField] public bool onGround = true;
+    [SerializeField] public bool isBlocking = false;
     [SerializeField] Transform opponentTransform;
 
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         inputController = GetComponent<InputController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        comboController = GetComponent<ComboController>();
 
     }
 
@@ -40,19 +41,34 @@ public class PlayerController : MonoBehaviour
 
             }
 
-            if (inputController.playerInput.Player.Move.ReadValue<Vector2>().x <= -.1f)
+            if (!isBlocking)
             {
-                MoveCharacter(inputController.playerInput.Player.Move.ReadValue<Vector2>());
+                if (comboController.attackLocked) return;
+
+                if (inputController.playerInput.Player.Move.ReadValue<Vector2>().x <= -.1f)
+                {
+                    MoveCharacter(inputController.playerInput.Player.Move.ReadValue<Vector2>());
+                }
+
+                if (inputController.playerInput.Player.Move.ReadValue<Vector2>().x >= .1f)
+                {
+                    MoveCharacter(inputController.playerInput.Player.Move.ReadValue<Vector2>());
+                }
+
+                if (inputController.playerInput.Player.Move.ReadValue<Vector2>().y > .1 && onGround)
+                {
+                    Jump();
+                }
             }
 
-            if (inputController.playerInput.Player.Move.ReadValue<Vector2>().x >= .1f)
+            if (inputController.playerInput.Player.Block.inProgress)
             {
-                MoveCharacter(inputController.playerInput.Player.Move.ReadValue<Vector2>());
+                isBlocking = true;
+                
             }
-
-            if(inputController.playerInput.Player.Move.ReadValue<Vector2>().y > .1 && onGround)
+            else
             {
-                Jump();
+                isBlocking = false;
             }
 
             CheckAndTurnPlayer();

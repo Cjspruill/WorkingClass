@@ -215,6 +215,15 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  blockAction:
+    m_Name: Block
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 4daacad0-1415-4fe9-821e-fee382219c2c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   playerController: {fileID: 0}
   comboController: {fileID: 0}
 --- !u!114 &2141393434858313784
@@ -234,7 +243,9 @@ MonoBehaviour:
   speed: 0.01
   jumpPower: 5
   inputController: {fileID: 0}
+  comboController: {fileID: 0}
   onGround: 1
+  isBlocking: 0
   opponentTransform: {fileID: 0}
 --- !u!114 &-3046502605175439610
 MonoBehaviour:
@@ -259,3 +270,6 @@ MonoBehaviour:
   cooldownTime: 0
   cooldownTimeMin: 5
   cooldownTimeMax: 10
+  hurtCooldown: 0.5
+  hurtBoxSpriteRenderer: {fileID: 0}
+  animator: {fileID: 0}
