@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] Rigidbody2D rigidbody2D;
-    [SerializeField] SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     [SerializeField] float speed = .001f;
     [SerializeField] float jumpPower = 50f;
 
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Move Left
-        if (SceneManager.GetActiveScene().name == "Game")
+        if (SceneManager.GetActiveScene().name != "MainMenu")
         {
             if (opponentTransform == null)
             {

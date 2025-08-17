@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ComboController : MonoBehaviour
 {
-
     private struct ComboEntry
     {
         public int moveDir;
@@ -16,31 +15,60 @@ public class ComboController : MonoBehaviour
         }
     }
 
-
-    [SerializeField] InputController inputController;
-    [SerializeField] Animator animator;
-    [SerializeField] BoxCollider2D attackColliderLeft;
-    [SerializeField] BoxCollider2D attackColliderRight;
-    [SerializeField] bool facingRight;
-
-
     private Queue<ComboEntry> comboQueue = new Queue<ComboEntry>();
 
-    private bool attackLocked = false;     // short lock to prevent double triggers
-    private float attackLockTimer = 0f;
-    private float attackLockDuration = 0.08f; // ~5 frames at 60fps
+    //Set in start
+    [SerializeField] Animator animator;
+    [SerializeField] InputController inputController;
+    [SerializeField] PlayerController playerController;
+    [SerializeField] BoxCollider2D groundCollider;
+    //Filled from inspector
+    [SerializeField] BoxCollider2D attackColliderLeft;
+    [SerializeField] BoxCollider2D attackColliderRight;
+ 
+    [SerializeField] Vector2 groundColliderOrig = new Vector2(-.25f, 1.35f);
+    [SerializeField] Vector2 groundColliderFlipped = new Vector2(.25f, 1.35f);
 
-    private int currentMoveDir = -1;
-    private bool currentPunch = true;
-    private bool inputConsumedThisFrame = false;
+    [SerializeField] bool facingRight;
+    [SerializeField] bool attackLocked = false;     // short lock to prevent double triggers
+    [SerializeField] float attackLockTimer = 0f;
+    [SerializeField] float attackLockDuration = 0.08f; // ~5 frames at 60fps
+    [SerializeField] int currentMoveDir = -1;
+    [SerializeField] bool currentPunch = true;
+    [SerializeField] bool inputConsumedThisFrame = false;
+
+    //Attack Transform Setups
+    [SerializeField] Transform jabLeftPosition; //Cross uses the jab position as well
+    [SerializeField] Transform jabRightPosition;
+    [SerializeField] Transform leadHookLeftPosition;
+    [SerializeField] Transform leadHookRightPosition;
+    [SerializeField] Transform uppercutLeftPosition;
+    [SerializeField] Transform uppercutRightPosition;
+    [SerializeField] Transform frontKickLeftPostition;
+    [SerializeField] Transform frontKickRightPosition;
+    [SerializeField] Transform leadSideKickLeftPosition;
+    [SerializeField] Transform leadSideKickRightPosition;
+    [SerializeField] Transform roundKickLeftPosition;
+    [SerializeField] Transform roundKickRightPosition;
+
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         inputController = GetComponent<InputController>();
+        playerController = GetComponent<PlayerController>();
+        groundCollider = GetComponent<BoxCollider2D>();
     }
     void Update()
     {
+        facingRight = playerController.spriteRenderer.flipX;
+
+        if (!facingRight)        
+            groundCollider.offset = groundColliderOrig; 
+        else  
+            groundCollider.offset = groundColliderFlipped;
+        
+
         inputConsumedThisFrame = false;
 
         // Decrease short lock timer
@@ -74,16 +102,21 @@ public class ComboController : MonoBehaviour
 
     private void StartAttack(int moveDir, bool punch)
     {
+        // Lock the attack to prevent double triggers
         attackLocked = true;
         attackLockTimer = attackLockDuration;
 
+        // Store the current attack info
         currentMoveDir = moveDir;
         currentPunch = punch;
 
+        // Set Animator parameters
         animator.SetInteger("MoveDir", moveDir);
 
-        if (punch) animator.SetTrigger("Punch");
-        else animator.SetTrigger("Kick");
+        if (punch)
+            animator.SetTrigger("Punch");
+        else
+            animator.SetTrigger("Kick");
     }
 
     // Animation Event at the end of each attack
@@ -101,51 +134,83 @@ public class ComboController : MonoBehaviour
     private int GetMoveDir(Vector2 moveInput, bool punch)
     {
         int moveDir = 0;
-        if (punch)
+
+        if (facingRight)
         {
             if (Mathf.Abs(moveInput.x) < 0.1f && Mathf.Abs(moveInput.y) < 0.1f) moveDir = 0;
-            else if (moveInput.x > 0.1f) moveDir = 1;
-            else if (moveInput.x < -0.1f) moveDir = 2;
-            else if (moveInput.y < -0.1f) moveDir = 3;
+            else if (moveInput.x > 0.1f) moveDir = 2; // RIGHT input while facing right = backward attack
+            else if (moveInput.x < -0.1f) moveDir = 1; // LEFT input while facing right = forward attack
         }
         else
         {
             if (Mathf.Abs(moveInput.x) < 0.1f && Mathf.Abs(moveInput.y) < 0.1f) moveDir = 0;
-            else if (moveInput.x > 0.1f) moveDir = 1;
-            else if (moveInput.x < -0.1f) moveDir = 2;
+            else if (moveInput.x < -0.1f) moveDir = 2; // LEFT input while facing left = backward attack
+            else if (moveInput.x > 0.1f) moveDir = 1; // RIGHT input while facing left = forward attack
         }
+
+        if (punch && moveInput.y < -0.1f)
+        {
+            moveDir = 3;
+        }
+
         return moveDir;
     }
 
-
-    public void EnableAttackColliderLeft(string value)
+    public void EnableAttackCollider(string value)
     {
-        if (facingRight) return;
+        // Choose which collider to move
+        BoxCollider2D colliderToMove = facingRight ? attackColliderLeft : attackColliderRight;
 
+        // Determine target attack transform based on current attack
+        Transform targetTransform = null;
+
+        if (currentPunch)
+        {
+            switch (currentMoveDir)
+            {
+                case 0:
+                case 1: targetTransform = facingRight ? jabLeftPosition : jabRightPosition; break;
+                case 2: targetTransform = facingRight ? leadHookLeftPosition : leadHookRightPosition; break;
+                case 3: targetTransform = facingRight ? uppercutLeftPosition : uppercutRightPosition; break;
+            }
+        }
+        else // Kick
+        {
+            switch (currentMoveDir)
+            {
+                case 0: targetTransform = facingRight ? frontKickLeftPostition : frontKickRightPosition; break;
+                case 1: targetTransform = facingRight ? roundKickLeftPosition : roundKickRightPosition; break;
+                case 2: targetTransform = facingRight ? leadSideKickLeftPosition : leadSideKickRightPosition; break;
+            }
+        }
+
+        // Update position & rotation before enabling
+        if (targetTransform != null)
+        {
+            colliderToMove.transform.position = targetTransform.position;
+            colliderToMove.transform.rotation = targetTransform.rotation;
+        }
+
+        // Enable/Disable collider
         switch (value)
         {
             case "Enable":
-                attackColliderLeft.gameObject.SetActive(true);
+                colliderToMove.enabled = true;
+                colliderToMove.GetComponent<SpriteRenderer>().enabled = true;
                 break;
             case "Disable":
-                attackColliderLeft.gameObject.SetActive(false);
+                colliderToMove.enabled = false;
+                colliderToMove.GetComponent<SpriteRenderer>().enabled = false;
                 break;
         }
     }
-
-    public void EnableAttackColliderRight(string value)
+    public void DisableColliders()
     {
-
-        if (!facingRight) return;
-
-        switch (value)
-        {
-            case "Enable":
-                attackColliderRight.gameObject.SetActive(true);
-                break;
-            case "Disable":
-                attackColliderRight.gameObject.SetActive(false);
-                break;
-        }
+        attackColliderLeft.enabled = false;
+        attackColliderRight.enabled = false;
+        attackColliderLeft.GetComponent<SpriteRenderer>().enabled = false;
+        attackColliderRight.GetComponent<SpriteRenderer>().enabled = false;
     }
+
+    
 }

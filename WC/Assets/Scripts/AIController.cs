@@ -1,156 +1,320 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AIController : MonoBehaviour
 {
-
-    //Ai states
-    [SerializeField] enum AIStates
+    private enum AIStates
     {
         Idle,
         Chase,
-        Attack
+        Attack,
+        Rest
     }
 
-    //Current ai state
-    [SerializeField] AIStates curState;
+    private AIStates curState = AIStates.Idle;
 
-    //Normal combo setup
-    [SerializeField] bool comboActive;
+    [Header("General")]
+    //Set in start
+    [SerializeField] Animator animator;
+    [SerializeField] PlayerController playerController;
+    [SerializeField] BoxCollider2D groundCollider;
+    [SerializeField] Transform opponentTransform;
+    //Set in inspector
+    [SerializeField] BoxCollider2D attackColliderLeft;
+    [SerializeField] BoxCollider2D attackColliderRight;
 
-    [SerializeField] int comboIndex;
-    [SerializeField] float comboTimer;
-    [SerializeField] float comboTime;
-    [SerializeField] float comboTimeMin = .5f;
-    [SerializeField] float comboTimeMax = 3f;
+    [SerializeField] Vector2 groundColliderOrig = new Vector2(-.25f, 1.35f);
+    [SerializeField] Vector2 groundColliderFlipped = new Vector2(.25f, 1.35f);
 
-    //Create a small timer buffer to slow down the attacks
-    [SerializeField] float idleBufferTimer;
-    [SerializeField] float idleBufferTime;
-    [SerializeField] float idleBufferTimeMin = .5f;
-    [SerializeField] float idleBufferTimeMax = 3f;
+    [SerializeField] bool facingRight;
+    [SerializeField] float speed = 2f;
+    [SerializeField] float attackRange = 1.5f;
+    [SerializeField] float chaseRange = 9f;
 
-    //Timer for idle to go back to attacking
-    [SerializeField] float idleTimer;
-    [SerializeField] float idleTime;
-    [SerializeField] float idleTimeMin = 3f;
-    [SerializeField] float idleTimeMax = 8f;
+    [Header("Combo Settings")]
+    [SerializeField] int comboIndex = 0;
+    [SerializeField] int maxComboHits = 3;
+    [SerializeField] float attackInterval = 0.5f;
+    private float attackTimer;
+
+    [Header("Idle Timers")]
+    [SerializeField] float idleTimeMin = .25f;
+    [SerializeField] float idleTimeMax = 1f;
+    private float idleTimer;
+    private float idleDuration;
+
+    [Header("Rest Timers")]
+    [SerializeField] float restTimeMin = .05f;
+    [SerializeField] float restTimeMax = .25f;
+    private float restTimer;
+    private float restDuration;
+
+    SpriteRenderer spriteRenderer;
+    Color origSpriteColor;
 
 
-    //Sprite renederer for visual color info
-    [SerializeField] SpriteRenderer spriteRenderer;
+    //Attack Transform Setups
+    [SerializeField] Transform jabLeftPosition; //Cross uses the jab position as well
+    [SerializeField] Transform jabRightPosition;
+    [SerializeField] Transform leadHookLeftPosition;
+    [SerializeField] Transform leadHookRightPosition;
+    [SerializeField] Transform uppercutLeftPosition;
+    [SerializeField] Transform uppercutRightPosition;
+    [SerializeField] Transform frontKickLeftPostition;
+    [SerializeField] Transform frontKickRightPosition;
+    [SerializeField] Transform leadSideKickLeftPosition;
+    [SerializeField] Transform leadSideKickRightPosition;
+    [SerializeField] Transform roundKickLeftPosition;
+    [SerializeField] Transform roundKickRightPosition;
 
-    [SerializeField] PlayerController playerReference;
-    [SerializeField] float distance;
-    [SerializeField] float speed;
-    
-    // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        comboTime = Random.Range(comboTimeMin, comboTimeMax);
-        idleBufferTime = Random.Range(idleBufferTimeMin, idleBufferTimeMax);
-        idleTime = Random.Range(idleTimeMin, idleTimeMax);
-
-        playerReference = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<PlayerController>();
+        idleDuration = Random.Range(idleTimeMin, idleTimeMax);
+        origSpriteColor = GetComponent<SpriteRenderer>().color;
+        groundCollider = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //If we fall below this position reset us above ground.
-        if (transform.position.y <= -10)
+        if (SceneManager.GetActiveScene().name != "MainMenu")
         {
-            transform.position = new Vector2(transform.position.x, 10);
+            if (opponentTransform == null)
+            {
+                opponentTransform = playerController.transform;
+            }
+                CheckAndTurnPlayer();
         }
 
-        //Have to switch somewhere in the code
+
         switch (curState)
         {
             case AIStates.Idle:
+                HandleIdle();
+                break;
+            case AIStates.Chase:
+                HandleChase();
+                break;
+            case AIStates.Attack:
+                HandleAttack();
+                break;
+            case AIStates.Rest:
+                HandleRest();
+                break;
+        }
+    }
 
-                if (comboActive)
+    void HandleIdle()
+    {
+        float dist = Vector2.Distance(transform.position, playerController.transform.position);
+
+        if (dist > chaseRange)
+        {
+            // Do nothing if player far away
+            return;
+        }
+
+        idleTimer += Time.deltaTime;
+        if (idleTimer >= idleDuration)
+        {
+            idleTimer = 0;
+            idleDuration = Random.Range(idleTimeMin, idleTimeMax);
+            curState = AIStates.Chase;
+        }
+    }
+
+    void HandleChase()
+    {
+        float dist = Vector2.Distance(transform.position, playerController.transform.position);
+
+        if (dist <= attackRange)
+        {
+            StartCombo();
+            return;
+        }
+        else if (dist <= chaseRange)
+        {
+            // Move toward player
+            Vector2 dir = (playerController.transform.position - transform.position).normalized;
+            transform.position += (Vector3)(dir * speed * Time.deltaTime);
+        }
+        else
+        {
+            // Player far away — back to idle
+            curState = AIStates.Idle;
+        }
+    }
+
+    void StartCombo()
+    {
+        comboIndex = 0;
+        attackTimer = 0;
+        curState = AIStates.Attack;
+    }
+
+    void HandleAttack()
+    {
+        attackTimer += Time.deltaTime;
+        if (attackTimer >= attackInterval)
+        {
+            attackTimer = 0;
+            comboIndex++;
+
+            // Randomly choose punch or kick
+            bool usePunch = Random.value < 0.5f;
+
+            if (usePunch)
+            {
+                // Punch directions: 0 to 3
+                int moveDir = Random.Range(0, 4);
+                animator.SetInteger("MoveDir", moveDir);
+                animator.SetTrigger("Punch");
+            }
+            else
+            {
+                // Kick directions: 0 to 2
+                int moveDir = Random.Range(0, 3);
+                animator.SetInteger("MoveDir", moveDir);
+                animator.SetTrigger("Kick");
+            }
+
+            // Visual feedback (remove later)
+            spriteRenderer.color = Color.green;
+            Invoke("CancelAttackColor", 0.1f);
+
+            // Random chance to abort combo early
+            if (Random.value < 0.1f && comboIndex < maxComboHits)
+            {
+                curState = AIStates.Rest;
+                PrepareRest();
+                return;
+            }
+
+            if (comboIndex >= maxComboHits)
+            {
+                curState = AIStates.Rest;
+                PrepareRest();
+            }
+        }
+    }
+
+    void CancelAttackColor()
+    {
+        spriteRenderer.color = origSpriteColor;
+    }
+
+    void PrepareRest()
+    {
+        restTimer = 0;
+        restDuration = Random.Range(restTimeMin, restTimeMax);
+    }
+
+    void HandleRest()
+    {
+        restTimer += Time.deltaTime;
+        if (restTimer >= restDuration)
+        {
+            curState = AIStates.Idle;
+        }
+    }
+
+    void CheckAndTurnPlayer()
+    {
+        if (opponentTransform == null) return;
+
+        //If Opponent is to right of us
+        if (opponentTransform.position.x < transform.position.x)
+        {
+            facingRight = false;
+            spriteRenderer.flipX = false;
+            groundCollider.offset = groundColliderOrig;
+        }
+        else
+        {
+            facingRight = true;
+            spriteRenderer.flipX = true;
+            groundCollider.offset = groundColliderFlipped;
+        }
+    }
+
+    public void OnAttackFinished()
+    {
+        //Just here for stuff
+    }
+
+    public void EnableAttackCollider(string value)
+    {
+        switch (value)
+        {
+            case "Enable":
+                Transform targetTransform = null;
+
+                // Determine target transform based on current animation state
+                // Using MoveDir parameter from animator
+                int moveDir = animator.GetInteger("MoveDir");
+                bool punch = animator.GetCurrentAnimatorStateInfo(0).IsTag("Punch");
+
+                if (punch)
                 {
-                    idleBufferTimer++;
-
-                    if (idleBufferTimer > idleBufferTime)
+                    switch (moveDir)
                     {
-                        idleBufferTimer = 0;
-                        idleBufferTime = Random.Range(idleBufferTimeMin, idleBufferTimeMax);
-                        TryAttack();
+                        case 0:
+                        case 1: targetTransform = facingRight ? jabLeftPosition : jabRightPosition; break;
+                        case 2: targetTransform = facingRight ? leadHookLeftPosition : leadHookRightPosition; break;
+                        case 3: targetTransform = facingRight ? uppercutLeftPosition : uppercutRightPosition; break;
                     }
+                }
+                else // Kick
+                {
+                    switch (moveDir)
+                    {
+                        case 0: targetTransform = facingRight ? frontKickLeftPostition : frontKickRightPosition; break;
+                        case 1: targetTransform = facingRight ? roundKickLeftPosition : roundKickRightPosition; break;
+                        case 2: targetTransform = facingRight ? leadSideKickLeftPosition : leadSideKickRightPosition; break;
+                    }
+                }
+
+                if (targetTransform == null) return;
+
+                // Choose which collider to move
+                BoxCollider2D colliderToMove = facingRight ? attackColliderRight : attackColliderLeft;
+
+                // Unparent, parent to new attack point, reset local position/rotation
+                colliderToMove.transform.parent = null;
+                colliderToMove.transform.SetParent(targetTransform, false);
+                colliderToMove.transform.localPosition = Vector3.zero;
+                colliderToMove.transform.localRotation = Quaternion.identity;
+
+                colliderToMove.enabled = true;
+                colliderToMove.GetComponent<SpriteRenderer>().enabled = true;
+                break;
+
+            case "Disable":
+                if (facingRight)
+                {
+                    attackColliderRight.enabled = false;
+                    attackColliderRight.GetComponent<SpriteRenderer>().enabled = false;
                 }
                 else
                 {
-                    idleTimer++;
-
-                    if(idleTimer > idleTime)
-                    {
-                        idleTimer = 0;
-                        //Chase first, then attack
-                        curState = AIStates.Chase;
-                    }
-                }
-
-
-
-                break;
-            case AIStates.Chase:
-                distance = Vector2.Distance(transform.position, playerReference.transform.position);
-                Vector2 direction = playerReference.transform.position - transform.position;
-                direction.Normalize();
-
-                if (distance < 9 && distance >= 1.5)
-                {
-                    transform.position = Vector2.MoveTowards(this.transform.position, playerReference.transform.position, speed * Time.deltaTime);
-                }
-                else if (distance < 1.5f)
-                {
-                    TryAttack();
-                }
-
-                break;
-            case AIStates.Attack:
-
-                comboTimer++;
-
-                if(comboTimer> comboTime)
-                {
-                    if(comboIndex <= 3)
-                    {
-                        comboIndex++;
-                        comboTimer = 0;
-                        comboTime = Random.Range(comboTimeMin,comboTimeMax);
-                        spriteRenderer.color = Color.red;
-                        Invoke("CancelAttack", .1f);
-                        comboActive = true;
-                        curState = AIStates.Idle;
-                    }
-                    
-                    if (comboIndex > 3)
-                    {
-                        comboIndex = 0;
-                        comboActive = false;
-                    }
+                    attackColliderLeft.enabled = false;
+                    attackColliderLeft.GetComponent<SpriteRenderer>().enabled = false;
                 }
                 break;
         }
     }
 
-
-    public void TryAttack()
+    public void DisableColliders()
     {
-        int randVal = Random.Range(0,500);
-        
-       if(randVal <= 1)
-        {
-            curState = AIStates.Attack;
-        }
+        attackColliderLeft.enabled = false;
+        attackColliderRight.enabled = false;
+        attackColliderLeft.GetComponent<SpriteRenderer>().enabled = false;
+        attackColliderRight.GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    public void CancelAttack()
-    {
-        spriteRenderer.color = Color.white;
-    }
+
 }

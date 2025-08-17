@@ -17,15 +17,22 @@ public class Health : MonoBehaviour
     [SerializeField] float cooldownTime;
     [SerializeField] float cooldownTimeMin = 5f;
     [SerializeField] float cooldownTimeMax = 10f;
+    [SerializeField] float hurtCooldown = 0.5f; // seconds between hurt triggers
+    private bool canBeHurt = true;
+
+    [SerializeField] SpriteRenderer hurtBoxSpriteRenderer;
+
+    [SerializeField] Animator animator;
 
     public float GetHealth { get => health; set => health = value; }
 
     // Start is called before the first frame update
     void Start()
     {
-      
+        hurtBoxSpriteRenderer.enabled = false;
         activeTime = Random.Range(activeTimeMin, activeTimeMax);
         cooldownTime = Random.Range(cooldownTimeMin, cooldownTimeMax);
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,13 +52,28 @@ public class Health : MonoBehaviour
     }
 
     public void TakeDamage(float value)
-    
     {
-        GetHealth -= value; //health = health - value;    health equals health minus value
+        if (!canBeHurt) return; // exit if still in cooldown
+
+        GetHealth -= value;
+
+        hurtBoxSpriteRenderer.enabled = true;
+
+        animator.SetTrigger("Hurt");
+
         if (GetHealth <= 0)
         {
-            Debug.Log("BOOM HEADSHOT");
+            animator.SetTrigger("Knockout");
         }
+
+        StartCoroutine(TurnOffHitBox());
+        StartCoroutine(HurtCooldownCoroutine());
+    }
+    IEnumerator HurtCooldownCoroutine()
+    {
+        canBeHurt = false;                // block further hurt triggers
+        yield return new WaitForSeconds(hurtCooldown);
+        canBeHurt = true;                 // allow hurt triggers again
     }
     public void GiveHealth(float value) 
     {
@@ -60,5 +82,11 @@ public class Health : MonoBehaviour
         {
             GetHealth = 100f;
         }
+    }
+
+    IEnumerator TurnOffHitBox()
+    {
+        yield return new WaitForSeconds(.15f);
+        hurtBoxSpriteRenderer.enabled = false;
     }
 }
