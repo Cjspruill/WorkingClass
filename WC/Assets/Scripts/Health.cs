@@ -76,6 +76,15 @@ public class Health : MonoBehaviour
         // Instead of waiting for round start, we start GetUp here
         StartCoroutine(GetUp());
         GameManager.instance.EndRound();
+
+            if (GetComponent<AIController>() != null)
+            {
+                GameManager.instance.GetPlayer2Wins++;
+            }
+            else if (GetComponent<PlayerController>() != null)
+            {
+                GameManager.instance.GetPlayer1Wins++;
+            }
     }
 
     StartCoroutine(TurnOffHitBox());

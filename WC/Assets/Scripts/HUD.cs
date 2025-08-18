@@ -19,7 +19,9 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.instance.oneVsOnePlayerOneSelection  != null)
         playerOneHealthSlider.value = GameManager.instance.oneVsOnePlayerOneSelection.GetComponent<Health>().GetHealth;
+        if (GameManager.instance.oneVsOnePlayerOpponentSelection != null)
         playerOpponentHealthSlider.value = GameManager.instance.oneVsOnePlayerOpponentSelection.GetComponent<Health>().GetHealth;
     }
 }

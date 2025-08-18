@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] GameObject endgamePanel;
     [SerializeField] public Transform[] playerOneStartPositions;
     [SerializeField] public Transform[] playerOpponentStartPositions;
     [SerializeField] TextMeshProUGUI timerText;
@@ -14,11 +15,13 @@ public class LevelManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnRoundStart += StartRound;
+        GameManager.OnEndGame += ShowEndScreen;
     }
 
     private void OnDisable()
     {
-        GameManager.OnRoundEnd -= StartRound;
+        GameManager.OnRoundStart -= StartRound;
+        GameManager.OnEndGame -= ShowEndScreen;
     }
 
     // Start is called before the first frame update
@@ -49,4 +52,25 @@ public class LevelManager : MonoBehaviour
 
         roundText.text = "";
     }
+
+    public void ShowEndScreen()
+    {
+        endgamePanel.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        GameManager.instance.oneVsOnePlayerOneSelection.gameObject.transform.position = playerOneStartPositions[0].position;
+        GameManager.instance.oneVsOnePlayerOpponentSelection.gameObject.transform.position = playerOpponentStartPositions[0].position;
+        endgamePanel.SetActive(false);
+        GameManager.instance.RestartGame();
+    }
+
+    public void QuitToTitle()
+    {
+        GameManager.instance.ReturnToTitle();
+
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;  // at the top
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,12 +33,18 @@ public class GameManager : MonoBehaviour
     public static event RoundEvent OnRoundStart;
     public static event RoundEvent OnRoundEnd;
 
+    public delegate void GameEvent();
+    public static event GameEvent OnEndGame;
 
     public static GameManager instance;
 
 
-    int player1Wins;
-    int player2Wins;
+    [SerializeField] int player1Wins = 0;
+    [SerializeField] int player2Wins = 0;
+
+    [SerializeField] RectTransform spawnedCharacters;
+    private Image player1Image;
+    private Image opponentImage;
 
     public enum GameModes
     {
@@ -54,19 +61,20 @@ public class GameManager : MonoBehaviour
     public float GetRoundTimer { get => roundTimer; set => roundTimer = value; }
     public int GetRound { get => round; set => round = value; }
     public bool GetRoundActive { get => roundActive; set => roundActive = value; }
+    public int GetPlayer1Wins { get => player1Wins; set => player1Wins = value; }
+    public int GetPlayer2Wins { get => player2Wins; set => player2Wins = value; }
 
-    public void Awake()
+    private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // note: gameObject, not instance
         }
-        else if(instance != this)
+        else if (instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject); // destroy duplicate GameManager
         }
-
-        DontDestroyOnLoad(instance);
     }
 
     private void OnEnable()
@@ -85,6 +93,7 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(BeginRoundWithDelay());
         }
+       
     }
 
     private IEnumerator BeginRoundWithDelay()
@@ -99,22 +108,22 @@ public class GameManager : MonoBehaviour
         GetRoundActive = true;
 
         OnRoundStart?.Invoke();
-
-        round++;
     }
 
     public void EndRound()
     {
         GetRoundActive = false;
         OnRoundEnd?.Invoke();
-        // You can trigger end-round UI, winner logic etc. here
 
-        if(player1Wins < 2 || player2Wins < 2)
+        round++; // <-- move it here
+
+        if (player1Wins < 2 && player2Wins < 2) // logical AND instead of OR
         {
-            if(GetRound < 3)
-            {
-                StartCoroutine(BetweenRound());
-            }
+            StartCoroutine(BetweenRound());
+        }
+        else
+        {
+            OnEndGame?.Invoke();
         }
     }
 
@@ -149,5 +158,63 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         StartRound();
+    }
+
+    public void EndGame()
+    {
+        OnEndGame?.Invoke();
+    }
+
+    public void RestartGame()
+    {
+        // Stop any pending coroutines
+        StopAllCoroutines();
+
+        // Reset round data
+        GetRound = 1;                // start from round 1
+        player1Wins = 0;
+        player2Wins = 0;
+        GetRoundTimer = roundTime;   // reset timer
+        GetRoundActive = false;      // ensure round is inactive
+
+        // Start the first round after delay
+        StartCoroutine(BeginRoundWithDelay());
+    }
+
+    public void ReturnToTitle()
+    {
+        player1Wins = 0;
+        player2Wins = 0;
+        GetRound = 0;
+        roundActive = false;
+
+        // Clean up character selections
+        oneVsOnePlayerOneSelection = null;
+        oneVsOnePlayerOpponentSelection = null;
+
+        // destroy spawned children if necessary
+        if (spawnedCharacters != null)
+        {
+            for (int i = spawnedCharacters.childCount - 1; i >= 0; i--)
+                Destroy(spawnedCharacters.GetChild(i).gameObject);
+        }
+
+
+            // Optionally destroy or clear the container object itself
+            Destroy(spawnedCharacters.gameObject);
+            spawnedCharacters = null;
+        }
+    
+
+    public void PullSpawnedCharacterTransformToGameManager()
+    {
+        spawnedCharacters.SetParent(gameObject.transform);
+    }
+
+    public void SetUIReferences(RectTransform spawned, Image p1, Image opponent)
+    {
+        spawnedCharacters = spawned;
+        player1Image = p1;
+        opponentImage = opponent;
     }
 }
